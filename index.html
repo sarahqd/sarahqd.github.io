@@ -7,7 +7,7 @@
 <meta http-equiv=“Pragma” content=”no-cache”>
 <meta http-equiv=“Expires” content=”-1″>
 <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
-<!-- CSS Stylesheets -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="css/master.css">
 
 <title>Portfolio Project</title>
@@ -15,48 +15,77 @@
 
 <body>
    <img src="">
-   <div>About me</div>
-   <h1>Sarah Li</h1>
-   <p>software engineer</p>
 
-   <div>--------</div>
-   <h2>Skill Summary</h2>
-   <div>
-      C/C++、Python、Linux、DirectFB、nodejs、Qt、javascript
-   </div>
-   <div></div>
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Sarah's blog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">About me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+    <main class="container">
+      <div class="p-5 rounded">
+        <h1 class="text-center">Sarah Li</h1>
+        <p class="lead text-center">software engineer</p>
+        <p class="para-1 text-left justify-content-center">
+          10-year working experience on software engineering, mostly on c++/linux
+          and sometimes on nodejs or python. I fancy working with different talented
+          people which boost my hunger for unknowns.
+        </p>
+      </div>
 
-   <div>--------</div>
-   <h2>Portfolio</h2>
-   <img src="">
-   <div></div>
 
-   <div>--------</div>
-   <h2>Career Highlights</h2>
-   <p>
-       <div>software Engineer</div>
-       <div>- Work on the browser module, design and develop new features.</div>
-       <div>- Work in a team consisted of more than a hundred members, and communicate with collegues and vendors from all over the world</div>
-       <div>R&D engineer</div>
-       <div>- Work with industrial engineers, and provide them with backend software solution.</div>
+   <h2 class="text-center">Skill Summary</h2>
+   <div class="d-flex gap-2 justify-content-center lead">
+      <span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">C/C++</span>
+      <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill">Linux</span>
+      <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Python</span>
+      <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">DirectFB</span>
+      <span class="badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill">Qt</span>
+      <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">javascript</span>
+      <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill">nodejs</span>
+    </div>
+
+   <div class="py-4"></div>
+
+   <h2 class="text-center">Career Highlights</h2>
+   <p class="text-center justify-content-center">
+      <div class="text-center">- Work with industrial engineers, and provide them with backend software solution.</div>
+       <div class="text-center">- Work on the browser module, design and develop new features.</div>
+       <div class="text-center">- Work in a team consisted of more than a hundred members
+       <div class="text-center">- Multinational communication with collegues and vendors</div>
     </p>
-   <div></div>
+    <div class="py-3"></div>
 
-   <div>--------</div>
-   <h2>Education</h2>
-   <p>Master of Engineering Mechanics, Hohai University</p>
-   <div></div>
+   <h2 class="text-center">Education</h2>
+   <p class="text-center">Master of Engineering Mechanics, Hohai University</p>
+   <div class="py-3"></div>
 
-   <div>--------</div>
-   <h2>Contact</h2>
-   <p>Email:sarahli20@hotmail.com</p>
+
+   <h2 class="text-center">Contact</h2>
+   <p class="text-center">Email:sarahli20@hotmail.com</p>
    <div></div>
+   </main>
    <image src=""></image>
 </body>
 
-<footer>
-    <p class="copyright-text">© Copyright 2024 Sarah Li </p>
-</footer>
+<div class="container">
+   <footer class="py-3 my-4 border-top">
+      <p class="text-center text-body-secondary">&copy; 2024 Sarah Li</p>
+    </footer>
+</div>
 
-<!-- Our codes -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>

@@ -1,4 +1,10 @@
 body {
-    background-color: #d7d7d7;
+    background-color: #ffffff;
     color: black;
+}
+
+.para-1{
+    width: 50%;
+    margin-left:auto;
+    margin-right:auto;
 }
