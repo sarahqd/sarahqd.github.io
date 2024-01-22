@@ -8,3 +8,7 @@ body {
     margin-left:auto;
     margin-right:auto;
 }
+
+.text-size-smaller{
+    font-size:smaller;
+}
