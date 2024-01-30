@@ -36,6 +36,9 @@ plugins:
 port: 5500
 markdown: kramdown
 remote_theme: pages-themes/cayman
+
+sass_dir: _sass
+excerpt_separator: <!--more-->
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

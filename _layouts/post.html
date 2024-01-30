@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<h1 class="p-justify py-2">{{ page.title }}</h1>
+<p class="text-size-smaller text-last-updated">last updated: {{ page.last_updated }}</p>
+
+{{content}}
+
+<div class="py-4"></div>
+<tr>
+    {% for tag in page.tags %}
+    <td><page-tag class="page-tag">{{ tag }}</page-tag></td>
+    {% endfor %}
+</tr>
