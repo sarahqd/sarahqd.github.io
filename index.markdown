@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 
 <ul>
@@ -8,6 +8,5 @@ layout: page
       <a href="{{ post.url }}">{{ post.title }}</a>
       {{ post.excerpt }}
       </div>
-
   {% endfor %}
 </ul>
