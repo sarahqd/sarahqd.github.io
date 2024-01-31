@@ -4,8 +4,11 @@ layout: default
 
 
 {% for post in site.posts %}
+  {% capture selectedContent %}
+      {{ post.excerpt | truncatewords: 27 }}
+  {% endcapture %}
   <div class="container grid_page">
-  <a href="{{ post.url }}">{{ post.title }}</a>
-  {{ post.excerpt }}
-  </div>
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  {{ selectedContent }}
+
 {% endfor %}
