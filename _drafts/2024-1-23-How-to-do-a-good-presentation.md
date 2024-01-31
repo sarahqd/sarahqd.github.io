@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "How to do a good presentation?"
-tags: presentation 2024
-created: January 23rd, 2024
-updated: 2024-01-31
+tags: Presentation Communication 2024
+created: January 23, 2024
+last_updated: January 31, 2024
 ---
-A good presentation has several major factors: confidence,  stable and balanced stance, good storytelling and passion. When you are standing in front of audience, 
+A good presentation has several major factors: confidence, clear structure,  stable and balanced stance, good storytelling and passion. There are so many times we need to push selfs to present something,  introducing our products for clients,  trying to win an opening in a job interview,  or just a public presentation to share our unique ideas to audience.
+
