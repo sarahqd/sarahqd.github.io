@@ -1,14 +1,15 @@
-document.onload(()=>{
-    const navLinks = document.querySelectorAll('.nav-link');
+//
+// control the active state of nav-link items
+//
+// Select all the nav-link elements
+let navLinks = document.querySelectorAll(".nav-link");
+let currentPath = window.location.href;
+// Loop through each nav-link element
+navLinks.forEach(function(navLink) {
+    if(navLink.href == currentPath){
+        document.querySelector(".nav-link.active").classList.remove("active");
+        // Add the active class to the clicked nav-link
+        navLink.classList.add("active");
+    };
+});
 
-    // Add an event listener to each link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-        // Remove the active class from all links
-        navLinks.forEach(link => link.classList.remove('active'));
-
-        // Add the active class to the clicked link
-        link.classList.add('active');
-        });
-    });
-})
