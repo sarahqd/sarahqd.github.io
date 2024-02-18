@@ -1,0 +1,183 @@
+---
+layout: post
+title:  "How to use node-ipc to implement client-server mode"
+tags: nodejs javascript ipc
+created: February 18, 2024
+last_updated: February 18, 2024
+---
+Here we'll talk about the implementation of node-ipc module, and how we use it to build a client-server with interval communication.
+<!--more-->
+
+## What's node-ipc
+
+node-ipc is a nodejs package which is used to communicate between server and client process asynchronously. 
+
+
+
+## Install node-ipc
+
+Use npm to install node-ipc package
+```
+npm install node-ipc
+```
+
+
+
+## Import node-ipc
+
+Import node-ipc module with require command. Be careful with `.default`. The first time I missed the word, and I got weird errors, such as `ipc.serve is not a function`. 
+
+```javascript
+const ipc = require('node-ipc').default;
+```
+
+
+
+## Client-server app
+
+The client-server app we'll build have several items including:
+
+1. Client connects to server once the client starts
+2. Client sends a message to server, then server responses to it every 1 second
+3. Server sends a message to the client only when client is connected
+4. Client disconnects the server immediately
+
+Code below runs on `Linux` platform. You need to change the path for `Windows/MacOS`.
+
+```javascript
+//server.js
+const ipc = require('node-ipc').default;
+
+let is_registered = false
+async function interval(cb){
+    setInterval(() => {
+        let err = false
+        if(!is_registered){
+            console.log(`there is no client`)
+            err = true
+        }
+        cb(err, 'hello client')
+    }, 1000)
+}
+// create an IPC server with filename 'ipcServer'
+ipc.serve('/home/sarah/Documents/ipcServer', () => {
+    ipc.server.on('connect', (socket)=>{
+        is_registered = true
+        console.log(`connect:is_registered:${is_registered}`)
+    })
+
+    // listen for messages from clients
+    ipc.server.on('message', (data, socket) => {
+        console.log(`received a message from client: ${data}`);
+        // send a message to the client
+        socket_ = socket
+        interval((err, msg)=>{
+            if(!err){
+                ipc.server.emit(socket_, 'message', msg);
+            }
+        })
+    })
+
+    // Listen for the socket.disconnected event
+    ipc.server.on('socket.disconnected', (socket, destroyedSocketID) => {
+        is_registered = false
+        console.log(`disconnect:is_registered:${is_registered}`)
+        console.log(`Socket ${destroyedSocketID} disconnected from the server`)
+    })
+})
+
+// start the IPC server
+ipc.server.start();
+```
+
+```javascript
+//client.js
+const ipc = require('node-ipc').default;
+// connect to an IPC server with id 'server'
+ipc.connectTo('ipcServer', '/home/sarah/Documents/ipcServer', () => {
+    // listen for the disconnect event
+    ipc.of.ipcServer.on('connect', () => {
+        console.log('server connected');
+    })
+    // send a message to the server
+    ipc.of.ipcServer.emit('message', 'hello server');
+    //   receive a message from the server
+    ipc.of.ipcServer.on('message', (data) => {
+    console.log(`received a message from server: ${data}`);
+    })
+
+    // listen for the disconnect event
+    ipc.of.ipcServer.on('disconnect', () => {
+        // disconnect from the socket
+        ipc.disconnect('ipcServer');
+        // do any other actions
+        console.log('server disconnected');
+    })
+})
+```
+
+Open two terminals in the vscode,  and run server.js and client.js alternatively. Then client sents a mesage to server,  after which server begins to send a message to client every 1 second. When client crashes, the server stops dispatching messages. Once the client connects to the server, the server restarts sending messages again.
+
+Server terminal output:
+
+```
+starting server on  /home/sarah/Documents/ipcServer 
+starting TLS server false
+starting server as Unix || Windows Socket
+
+socket connection to server detected
+connect:is_registered:true
+received event of :  message hello server
+received a message from client: hello server
+
+dispatching event to socket  :  message hello client
+dispatching event to socket  :  message hello client
+dispatching event to socket  :  message hello client
+dispatching event to socket  :  message hello client
+socket disconnected false
+disconnect:is_registered:false
+Socket false disconnected from the server
+there is no client
+there is no client
+there is no client
+there is no client
+there is no client
+
+socket connection to server detected
+
+connect:is_registered:true
+received event of :  message hello server
+received a message from client: hello server
+dispatching event to socket  :  message hello client
+dispatching event to socket  :  message hello client
+dispatching event to socket  :  message hello client
+...
+```
+
+Client terminal output:
+
+```
+requested connection to  ipcServer /home/sarah/Documents/ipcServer
+Connecting client on Unix Socket : /home/sarah/Documents/ipcServer
+dispatching event to  ipcServer /home/sarah/Documents/ipcServer  :  message , hello server
+server connected
+retrying reset
+
+received events
+
+detected event message hello client
+received a message from server: hello client
+
+received events
+
+detected event message hello client
+received a message from server: hello client
+
+received events
+
+detected event message hello client
+received a message from server: hello client
+
+...
+```
+
