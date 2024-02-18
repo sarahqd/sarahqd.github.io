@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to use node-ipc to implement client-server mode"
-tags: Nodejs Javascript ipc
+tags: nodejs javascript ipc
 created: February 5, 2024
 last_updated: February 5, 2024
 ---

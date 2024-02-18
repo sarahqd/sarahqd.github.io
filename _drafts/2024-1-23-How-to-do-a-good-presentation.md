@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to do a good presentation?"
-tags: Presentation Communication
+tags: presentation communication
 created: January 23, 2024
 last_updated: January 31, 2024
 ---
