@@ -5,18 +5,18 @@ tags: nodejs javascript ipc
 created: February 18, 2024
 last_updated: February 18, 2024
 ---
-Here we'll talk about the implementation of node-ipc module, and how we use it to build a client-server with interval communication.
+Here we'll talk about the implementation of `node-ipc` module, and how we use it to build a client-server with interval communication.
 <!--more-->
 
 ## What's node-ipc
 
-node-ipc is a nodejs package which is used to communicate between server and client process asynchronously. 
+`node-ipc` is a nodejs package which is used to communicate between server and client process asynchronously.  Based on the Unix/Windows sockets, `node-ipc` doesn't transfer information with real web sockets, which consumes more time than platform sockets.
 
 
 
 ## Install node-ipc
 
-Use npm to install node-ipc package
+Use `npm` to install `node-ipc` package
 ```
 npm install node-ipc
 ```
@@ -25,7 +25,7 @@ npm install node-ipc
 
 ## Import node-ipc
 
-Import node-ipc module with require command. Be careful with `.default`. The first time I missed the word, and I got weird errors, such as `ipc.serve is not a function`. 
+Import `node-ipc` module with require command. Be careful with `.default`. The first time I missed the word, and I got weird errors, such as `ipc.serve is not a function`. 
 
 ```javascript
 const ipc = require('node-ipc').default;
@@ -34,6 +34,8 @@ const ipc = require('node-ipc').default;
 
 
 ## Client-server app
+
+![](../../../assets/images/2024-2-19-node-ipc.svg){:class="post-img"}
 
 The client-server app we'll build have several items including:
 
@@ -70,10 +72,9 @@ ipc.serve('/home/sarah/Documents/ipcServer', () => {
     ipc.server.on('message', (data, socket) => {
         console.log(`received a message from client: ${data}`);
         // send a message to the client
-        socket_ = socket
         interval((err, msg)=>{
             if(!err){
-                ipc.server.emit(socket_, 'message', msg);
+                ipc.server.emit(socket, 'message', msg);
             }
         })
     })
@@ -88,6 +89,16 @@ ipc.serve('/home/sarah/Documents/ipcServer', () => {
 
 // start the IPC server
 ipc.server.start();
+
+process.on('uncaughtException', async err => {
+    console.log(`uncaught exception: ${err}`);
+})
+
+process.on('exit', (err) => {
+    console.log('process will exit')
+    ipc.server.stop()
+    process.exit(1)
+})
 ```
 
 ```javascript
@@ -116,7 +127,7 @@ ipc.connectTo('ipcServer', '/home/sarah/Documents/ipcServer', () => {
 })
 ```
 
-Open two terminals in the vscode,  and run server.js and client.js alternatively. Then client sents a mesage to server,  after which server begins to send a message to client every 1 second. When client crashes, the server stops dispatching messages. Once the client connects to the server, the server restarts sending messages again.
+Open two terminals in the vscode,  and run server.js and client.js alternatively. Then client sends a message to server,  after which server begins to send a message to client every 1 second. When client crashes, the server stops dispatching messages. Once the client connects to the server, the server restarts sending messages again.
 
 Server terminal output:
 
