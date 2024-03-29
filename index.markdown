@@ -9,12 +9,12 @@ layout: default
       {{ post.excerpt | truncatewords: 27 }}
   {% endcapture %}
 
-
   <p class="container grid_page">
     <h2>
       <a href="{{ post.url }}">{{ post.title }}</a>
+      <div class="horizontal-line"></div>
     </h2>
-    <p> {{ selectedContent }} </p>
+    {{ selectedContent }}
   </p>
 
 
