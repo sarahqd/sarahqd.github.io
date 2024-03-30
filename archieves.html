@@ -2,7 +2,19 @@
 permalink: /archieves/
 layout: default
 ---
-<h2>Tags</h2>
-{% for tag in site.tags %}
-  <span><a href="#{{ tag[0] }}">{{ tag[0] }}({{ tag[1] | size }})</a></span> |
+
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" | sort: 'name' | reverse %}
+
+
+{% for year in postsByYear %}
+    <div id="#section-{{ year.name }}" class="group-title">{{ year.name }}</div>
+    <table>
+        {% for post in year.items %}
+        <tr>
+          <th class="text-last-updated"><img src="/assets/images/date-icon-2024-01-31-1311.svg" class="icon-setting">{{ post.created }}</th>
+          <th class="table-content"><a href="{{ post.url }}">{{ post.title }}</th>
+        </tr>
+        {% endfor %}
+  </table>
 {% endfor %}
+

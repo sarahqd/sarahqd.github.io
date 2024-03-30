@@ -23,3 +23,26 @@
 .block {
     height: 10em;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-weight: 50;
+}
+tr:nth-child(odd) {
+    background-color: white; /* Light gray for odd rows */
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Dark gray for even rows */
+}
+.group-title {
+    font-size:x-large;
+    font-weight: 200;
+    margin-top: 2rem;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}

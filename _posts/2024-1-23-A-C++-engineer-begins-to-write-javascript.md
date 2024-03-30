@@ -5,7 +5,7 @@ tags: javascript software
 created: January 23, 2024
 last_updated: February 21, 2024
 ---
-One day, there was a task in need of a small javascript function in my work, and I decided to do it myself. I thought if I could write in one kind of coding language then I could manage to use another one.It sounds like if a person could speak Chinese, then he must speak English easily. It's funny. But the javascript code I wrote works ok, even though it looks more c++ style. 
+One day, there was a task in need of a small javascript function in my work, and I decided to do it myself. I thought if I could write in one kind of coding language then I could manage to use another one.It sounds like if a person could speak Chinese, then he must speak English easily. It's funny. But the javascript code I wrote works ok, even though it looks more c++ style.
 <!--more-->
 Quite C++ style javascript code.
 
@@ -52,7 +52,7 @@ async function handleString(){
 }
 ```
 
-I felt more comfortable with `asynchronous` code.  At the same time, I got the significance of `await`, for I got trapped into the callback as well.  Take code below for example. 
+I felt more comfortable with `asynchronous` code.  At the same time, I got the significance of `await`, for I got trapped into the callback as well.  Take code below for example.
 
 ```javascript
 async function add(int_num, cb){
@@ -67,11 +67,11 @@ async function add(int_num, cb){
 async function Iterate(int_begin){
     add(int_begin, (err, int_add) => {
         if(!err){
-            int_begin = int_add + int_begin 
+            int_begin = int_add + int_begin
         }
         //call main function in the callback of 'add'
         if(int_begin < 100){
-            Iterate(int_begin) 
+            Iterate(int_begin)
         }
     })
 }
@@ -91,10 +91,10 @@ async function add(int_num, cb){
 
 async function Iterate(int_begin){
     while (int_begin < 100) {
-        //wait until 
+        //wait until
         await add(int_begin, (err, int_add) => {
             if(!err){
-                int_begin = int_add + int_begin 
+                int_begin = int_add + int_begin
             }
         })
     }
