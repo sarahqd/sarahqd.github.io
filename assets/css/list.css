@@ -1,0 +1,25 @@
+.grid_page {
+    text-align: left;
+    border-width: thin;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title {
+  font-size:x-large;
+  font-weight: 200;
+  padding-bottom: 10px;
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+}
+.title a {
+    color: rgb(181, 94, 94);
+}
+
+.horizontal-line {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+.block {
+    height: 10em;
+}

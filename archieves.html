@@ -2,22 +2,7 @@
 permalink: /archieves/
 layout: default
 ---
-
+<h2>Tags</h2>
 {% for tag in site.tags %}
   <span><a href="#{{ tag[0] }}">{{ tag[0] }}({{ tag[1] | size }})</a></span> |
-{% endfor %}
-
-{% for tag in site.tags %}
-  <ul>
-    {% for post in tag[1] %}
-        {% capture selectedContent %}
-            {{ post.excerpt | truncatewords: 27 }}
-        {% endcapture %}
-
-        <div class="container grid_page">
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            {{ selectedContent }}
-        </div>
-    {% endfor %}
-  </ul>
 {% endfor %}

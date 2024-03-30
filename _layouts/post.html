@@ -8,7 +8,7 @@ layout: default
 {% endcapture %}
 
 <p class="text-size-smaller text-last-updated">
-    <img src="/assets/images/date-icon-2024-01-31-1311.svg" class="icon-setting">{{ page.created }} 
+    <img src="/assets/images/date-icon-2024-01-31-1311.svg" class="icon-setting">{{ page.created }}
     <img src="/assets/images/time-icon-2024-01-31-1332.svg" class="icon-setting"> {{ read_time }} minutes
 </p>
 
@@ -17,6 +17,6 @@ layout: default
 <div class="py-4"></div>
 <tr>
     {% for tag in page.tags %}
-    <td><page-tag class="page-tag">{{ tag }}</page-tag></td>
+    <td><page-tag>{{ tag }}</page-tag></td>
     {% endfor %}
 </tr>

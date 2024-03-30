@@ -29,8 +29,8 @@ if (status != IFSelect_RetDone){
 When we get the shape object, then we could convert it to vtk data.
 
 ```c++
-    IVtkTools_ShapeDataSource* source = IVtkTools_ShapeDataSource::New();
-    source->SetShape(new IVtkOCC_Shape(shape));
+IVtkTools_ShapeDataSource* source = IVtkTools_ShapeDataSource::New();
+source->SetShape(new IVtkOCC_Shape(shape));
 ```
 
 
@@ -41,17 +41,11 @@ If the geometry file is an assembly, looks like this
 
 ```
 ---Assembly
-
 -----Component 1
-
 ----------Part 1
-
 ----------Part 2
-
 -----Component 2
-
 ----------Part 3
-
 ----------Part 4
 ```
 

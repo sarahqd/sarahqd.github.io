@@ -35,7 +35,9 @@ plugins:
 
 port: 5500
 markdown: kramdown
-remote_theme: pages-themes/cayman
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 sass_dir: _sass
 excerpt_separator: <!--more-->
