@@ -17,6 +17,6 @@ layout: default
 <div class="py-4"></div>
 <tr>
     {% for tag in page.tags %}
-    <td><page-tag>{{ tag }}</page-tag></td>
+    <td><a href="/categories/#section-{{ tag }}"><page-tag>{{ tag }}</page-tag></a></td>
     {% endfor %}
 </tr>

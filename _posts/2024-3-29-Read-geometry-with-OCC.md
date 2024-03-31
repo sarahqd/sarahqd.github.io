@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Read cad geometry and assemblies with OCCT"
-tags: CAD C++ OCCT
+tags: CAD
 created: March 29, 2024
 last_updated: March 29, 2024
 ---

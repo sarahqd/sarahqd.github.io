@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to use node-ipc to implement server-client mode"
-tags: nodejs javascript ipc
+tags: nodejs ipc
 created: February 18, 2024
 last_updated: February 21, 2024
 ---
@@ -25,7 +25,7 @@ npm install node-ipc
 
 ## Import node-ipc
 
-Import `node-ipc` module with require command. Be careful with `.default`. The first time I missed the word, and I got weird errors, such as `ipc.serve is not a function`. 
+Import `node-ipc` module with require command. Be careful with `.default`. The first time I missed the word, and I got weird errors, such as `ipc.serve is not a function`.
 
 ```javascript
 const ipc = require('node-ipc').default;
@@ -129,14 +129,14 @@ ipc.connectTo('ipcServer', '/home/sarah/Documents/ipcServer', () => {
 
 Open two terminals in the vscode,  and run server.js and client.js alternatively. Then client sends a message to server,  after which server begins to send a message to client every 1 second. When client crashes, the server stops dispatching messages. Once the client connects to the server, the server restarts sending messages again.
 
-It must be noticed that the server or the client may miss the messages sent to them. The server or the client emits a message and returns immediately for other operations. It's another thing to receive the message for the receiver. 
+It must be noticed that the server or the client may miss the messages sent to them. The server or the client emits a message and returns immediately for other operations. It's another thing to receive the message for the receiver.
 
 Also, `setInterval` is not a common operation but here the example just targets a continuous communication between a server and a client.
 
 Server terminal output:
 
 ```
-starting server on  /home/sarah/Documents/ipcServer 
+starting server on  /home/sarah/Documents/ipcServer
 starting TLS server false
 starting server as Unix || Windows Socket
 
