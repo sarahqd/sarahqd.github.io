@@ -47,12 +47,6 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
-.section-space::before {
-    content: "";
-    display: block;
-    height: 1px; /* 设置你想要的空白高度 */
-}
-
 .tag-num {
     vertical-align: top;
 }

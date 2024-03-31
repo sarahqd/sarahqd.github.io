@@ -7,7 +7,7 @@ let currentPath = window.location.href;
 let b_active = false;
 // Loop through each nav-link element
 navLinks.forEach(function(navLink) {
-    if(navLink.href == currentPath){
+    if(navLink.href == currentPath.split('#')[0]){
         document.querySelector(".nav-link.active").classList.remove("active");
         // Add the active class to the clicked nav-link
         navLink.classList.add("active");
