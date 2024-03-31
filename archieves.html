@@ -7,8 +7,8 @@ layout: default
 
 {% for year in postsByYear %}
     {% assign itemsNum = year.items | size %}
-    <span class="badge rounded-pill bg-light text-dark">
-      <a href="#section-{{ year.name }}">
+    <span>
+      <a href="#section-{{ year.name }}" class="tag-list">
       {{ year.name }}<span class="tag-num">{{ itemsNum }}</span>
       </a>
     </span>

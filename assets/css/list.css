@@ -54,5 +54,22 @@ tr:nth-child(even) {
 }
 
 .tag-num {
-    vertical-align: text-top;
+    vertical-align: top;
+}
+
+.tag-list{
+    background-color: #556bd8;
+    border-radius: 0.8em;
+    border-color: rgb(109, 109, 109);
+    border-width: thin;
+    padding: 1em;
+    margin: 0.2rem;
+    font-size:small;
+    font-weight: bold;
+    color:white;
+    padding: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tag-list:hover {
+    font-weight: bold;
 }
