@@ -9,7 +9,7 @@ layout: default
     {% assign itemsNum = year.items | size %}
     <span class="badge rounded-pill bg-light text-dark">
       <a href="#section-{{ year.name }}">
-      {{ year.name }}({{ itemsNum }})
+      {{ year.name }}<span class="tag-num">{{ itemsNum }}</span>
       </a>
     </span>
 {% endfor %}
