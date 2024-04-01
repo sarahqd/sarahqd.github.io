@@ -67,3 +67,7 @@ tr:nth-child(even) {
 .tag-list:hover {
     font-weight: bold;
 }
+
+.table-content a {
+    color: black;
+}
