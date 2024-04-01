@@ -49,6 +49,7 @@ tr:nth-child(even) {
 
 .tag-num {
     vertical-align: top;
+    font-size: xx-small;
 }
 
 .tag-list{
