@@ -14,7 +14,9 @@ layout: default
 
 <div class="horizontal-line"></div>
 {% for tag in site.tags %}
-    <div id="section-{{ tag[0] }}" class="group-title">#{{ tag[0] }}</div>
+    <div id="section-{{ tag[0] }}" class="group-title">
+      <img src="/assets/images/tag-icon-2024-02-18-1534.svg" class="icon-setting"> {{ tag[0] }}
+    </div>
     <table>
         {% for post in tag[1] %}
         <tr>
