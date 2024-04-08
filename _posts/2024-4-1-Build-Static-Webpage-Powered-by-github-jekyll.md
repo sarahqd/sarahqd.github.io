@@ -4,6 +4,7 @@ title:  "Build a personal website powered by GitHub and Jekyll"
 tag: html
 created: April 1, 2024
 last_updated: April 1, 2024
+image: ../../../assets/images/2024-4-1-github-jekyll.jpeg
 ---
 GitHub has provided every user with a free webpage URL.  If what you want to build is just a static and open-source website, GitHub pages is the best choice .<!--more-->
 
