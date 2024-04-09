@@ -1,18 +1,20 @@
-# Frequently used vocabulary（Updating）
-
-[TOC]
-
-
+---
+layout: post
+title:  "Frequently used vocabulary(Updating)"
+tags: Vocabulary
+created: February 21, 2024
+last_updated: April 9, 2024
+---
 
 ## walk
 
-stride 大踏步的走
+stride - a large distance for each step
 
-stroll 悠闲的漫步
+stroll - walk in a relaxed mood
 
-stomp 跺脚走  通常比较生气
+stomp - walk in a bad mood and make a noisy sound
 
-limp  受伤的脚走路
+limp - walk without well balance because of disease or injury
 
 
 

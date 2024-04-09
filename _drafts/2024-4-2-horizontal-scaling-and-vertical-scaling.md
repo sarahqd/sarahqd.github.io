@@ -1,7 +1,35 @@
 ---
 layout: post
-title:  "Horizontal scaling vs vertical scaling"
-tag: system design
-created: April 2, 2024
-last_updated: April 2, 2024
+title:  "Hash functioin and its application"
+tags: 
+created: April 9, 2024
+last_updated: April 9, 2024
 ---
+
+## What's a hash function
+
+
+
+
+
+
+
+## Application on data storage
+
+
+
+
+
+
+
+## Application on load balancing
+
+
+
+
+
+
+
+
+
+## Reference
