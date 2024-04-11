@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Hash functioin and its application"
-tags: 
+title:  "Hash function and its application on load balancing"
+tags: ["Load balancing"]
 created: April 9, 2024
 last_updated: April 9, 2024
 ---
