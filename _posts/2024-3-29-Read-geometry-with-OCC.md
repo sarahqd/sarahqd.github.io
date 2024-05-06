@@ -3,7 +3,7 @@ layout: post
 title:  "Read cad geometry and assemblies with OCCT"
 tags: CAD
 created: March 29, 2024
-last_updated: March 29, 2024
+last_updated: May 6, 2024
 ---
 Open CASCADE Technology (OCCT) is used to get data from geometry files(such as .stp or .iges files), in CAD/CAE applications. The retrieved geometry data could be converted to be VTK data, which is rendered afterwards in VTK render window.<!--more-->
 
@@ -95,6 +95,20 @@ for (int i = 1; i <= labels.Length(); i++) {
         else if(assembly->IsComponent(label)){
             //save the shape as a component
         }
+    }
+}
+```
+
+There is another point we need to care about: OCCT usually merges the same geometrical parts into one part for memory consideration, e.g., a line of circles. If we want to separate those parts, we need to do other operations on the geometry. The code below separates the shape into `TopAbs_SOLID` parts.
+
+```c++
+if(assembly->IsSimpleShape(label)){
+    TopExp_Explorer topExp;
+    for (topExp.Init(shape, TopAbs_SOLID); topExp.More(); topExp.Next())
+    {
+        TopoDS_Shape individual_solid = topExp.Current();
+        TopoDS_Shape* TopoDS_Shape_ = new TopoDS_Shape(individual_solid);
+        //save each part
     }
 }
 ```
