@@ -24,7 +24,7 @@ VTK pipeline has several general processes: data, filter, mapper, actor, rendere
 
 ## A VTK example
 
-Here is an example: There is a hammer and I'd like to render its feature edge in the window. Assume you've got the data of the hammer (Referenced for [Read cad geometry and assemblies with OCCT](http://localhost:5500/2024/03/29/Read-geometry-with-OCC.html)).
+Here is an example: There is a hammer and I'd like to render its feature edge in the window. Assume you've got the data of the hammer (Referenced for [Read cad geometry and assemblies with OCCT](https://sarahqd.github.io/2024/03/29/Read-geometry-with-OCC.html)).
 
 ```c++
 //include vtk headers we need
