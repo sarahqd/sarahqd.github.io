@@ -77,3 +77,5 @@ Now we've got the connected surface part data,  then we build up an actor with t
 ## Reference
 
 [VTK doc](https://docs.vtk.org/)
+
+[VTK pipeline and an example](https://sarahqd.github.io/2024/04/29/Pipeline-of-rendering-and-VTK-example.html)
