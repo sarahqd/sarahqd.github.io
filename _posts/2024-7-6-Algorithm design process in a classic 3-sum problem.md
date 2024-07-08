@@ -82,39 +82,42 @@ With hash table, we can store all integers into a hash map to find the `sum - nu
 The C++ code looks like
 
 ```c++
-std::unordered_map<int, int> hashMap;
-for(int i = 0; i < nums.size(); ++i){
-	if(hashMap.count(nums.at(i))){
-		hashMap[nums.at(i)] += 1;
-	}else{
-		hashMap[nums.at(i)] = 1;
-	}
-}
-
-
-for(int i = 0; i < nums.size() - 2; ++i){
-    if(nums.at(i) >= sum) continue;
-    hashMap[nums.at(i)] -= 1;
-    for(int j = i + 1; j < nums.size() - 1, ++j){
-        if(nums.at(j) >= sum - nums.at(j)) continue;
-        hashMap[nums.at(j)] -= 1;
-        int needNum = sum - nums.at(i) + nums.at(j);
-        if(hashMap.count(needNum)){
-           return true;
+bool get3Integers(const QVector<int>& nums, int sum)
+{
+    std::unordered_map<int, int> hashMap;
+    for(int i = 0; i < nums.size(); ++i){
+        if(hashMap.count(nums.at(i))){
+            hashMap[nums.at(i)] += 1;
+        }else{
+            hashMap[nums.at(i)] = 1;
         }
-        hashMap[nums.at(j)] += 1;
     }
-}
 
-return false;
+
+    for(int i = 0; i < nums.size() - 2; ++i){
+        if(nums.at(i) >= sum) continue;
+        hashMap[nums.at(i)] -= 1;
+        for(int j = i + 1; j < nums.size() - 1, ++j){
+            if(nums.at(j) >= sum - nums.at(j)) continue;
+            hashMap[nums.at(j)] -= 1;
+            int needNum = sum - nums.at(i) + nums.at(j);
+            if(hashMap.count(needNum)){
+               return true;
+            }
+            hashMap[nums.at(j)] += 1;
+        }
+    }
+
+    return false;
+}
 ```
 The initialization of a hash map has a time complexity `O(n)` and a space complexity `O(n)`.  Then the search of `i` and `j` cycle has a time complexity `O(n^2)`. So the time complexity is `O(n^2)`.
 
 ### Let the input be simple - sort
 
-We notice that the input data [10,12,4,2,8] is unordered. Now go through our toolbox again. We have sort method in the toolbox. If we convert the input data to [2,4,8,10,12], it costs `O(nlogn)`, but the find cycle above may reduce the total numbers in some situation.
+We notice that the input data [10,12,4,2,8] is unordered. Now go through our toolbox again. We have the sort method in the toolbox. If we convert the input data to [2,4,8,10,12], it costs `O(nlogn)`, but the find cycle above may reduce the total numbers in some situation.
 
-For example, add a number 18 into the original input data. Now the input data is  [18,10,12,4,2,8].  Sort the data array from bigger to smaller, and we get [18, 12, 10, 8, 4, 2]. Then we don't have to iterate the cycle when `i = 0`, because the smallest number is equal or bigger than `sum - nums.at(0)`.   If the dataset contains a lot of unexpected data, sort method is a good way to help filter them.
+For example, add a number 18 into the original input data. Now the input data is  [18,10,12,4,2,8].  Sort the data array from bigger to smaller, and we get [18, 12, 10, 8, 4, 2]. Then we don't have to iterate the cycle when `i = 0`, because the smallest number is equal to or bigger than `sum - nums.at(0)`.   If the dataset contains a lot of unexpected data, the sort method is a good way to help filter it.
 
 In this post, we've taken advantage of our toolbox. It's not necessary to design an algorithm from scratch. Next time we'll dig more about our toolbox.
 
