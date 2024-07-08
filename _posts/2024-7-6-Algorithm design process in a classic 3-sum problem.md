@@ -101,7 +101,7 @@ bool get3Integers(const QVector<int>& nums, int sum)
             if(nums.at(j) >= sum - nums.at(j)) continue;
             hashMap[nums.at(j)] -= 1;
             int needNum = sum - nums.at(i) + nums.at(j);
-            if(hashMap.count(needNum)){
+            if(hashMap.count(needNum) && hashMap[needNum] > 0){
                return true;
             }
             hashMap[nums.at(j)] += 1;
