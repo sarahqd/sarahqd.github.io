@@ -18,6 +18,7 @@ if(!b_active){
     document.querySelector(".nav-link.active").classList.remove("active");
 }
 
+var resultsContainer = document.getElementById('results-container');
 // Function to trigger search on input event
 document.getElementById('inputSearch').addEventListener('input', function(event) {
     var searchTerm = event.target.value;
@@ -30,7 +31,6 @@ document.getElementById('inputSearch').addEventListener('input', function(event)
         limit: 10,
         fuzzy: false
       });
-    var resultsContainer = document.getElementById('results-container');
     if(searchTerm){
         try{
             simpleJekyllSearchInstance.search(searchTerm);
@@ -50,4 +50,18 @@ document.getElementById('inputSearch').addEventListener('input', function(event)
     }else{
         resultsContainer.style.display = 'none';
     }
+});
+
+document.getElementById('inputSearch').addEventListener('focus', function() {
+    resultsContainer.innerHTML = ''; // Clear the results
+    resultsContainer.style.display = 'none'; // Optionally hide the container
+});
+
+  // Optional: Clear results and hide container on blur if needed
+document.getElementById('inputSearch').addEventListener('blur', function() {
+    // You can choose to hide the results container when the input loses focus
+    setTimeout(function() {
+      resultsContainer.innerHTML = ''; // Clear the results
+      resultsContainer.style.display = 'none'; // Hide the container
+    }, 200); // Delay to allow click events inside the results container to be processed
 });
