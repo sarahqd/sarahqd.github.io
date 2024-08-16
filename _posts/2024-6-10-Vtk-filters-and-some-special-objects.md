@@ -3,7 +3,7 @@ layout: post
 title:  "Important VTK filters and some special objects"
 tags: VTK
 created: June 10, 2024
-last_updated: July 1, 2024
+last_updated: Aug 16, 2024
 ---
 
 There are a huge of VTK filters and other objects used in different contexts. Here,  I'd like to list a couple of useful filters and objects that are frequently used in CAD rendering.<!--more-->
@@ -71,6 +71,15 @@ if (cellId != -1)
 ```
 
 Now we've got the connected surface part data,  then we build up an actor with the data and render it in yellow color. That's all.
+
+## Memory management
+
+VTK allocates a vast volume of memory and generates a lot of temporary stuffs when reading data from files, but it doesn't release the memory immediately sometimes. If there are a series of large data files waiting to be processed, the computer system may be at stake of lacking memory. Fortunately,  we could trigger garbage collector actively.  Comparing with allocated memory without `vtkGarbageCollector`,  VTK consumes at most 50% memory.
+
+```c++
+vtkObject::GlobalWarningDisplayOff(); //Agree to collect garbage actively
+vtkGarbageCollector::Collect();       //collect garbage
+```
 
 
 
