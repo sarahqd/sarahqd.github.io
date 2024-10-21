@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Consistency models"
+title: "Consistency models for distributed systems"
 tags: ["System"]
 created: October 20, 2024
 last_updated: October 20, 2024
@@ -24,13 +24,41 @@ Q3: Which consistency models do the big companies use? and what area do the mode
 
 ## 4 Major Consistency Models
 
+### Strong Consistency
+
+
+
+### Sequential Consistency
+
+
+
+### Causal Consistency
+
+
+
+### Eventual Consistency
+
+
+
 
 
 
 
 ## Examples of implementation in C++
 
+### Strong Consistency
 
+
+
+### Sequential Consistency
+
+
+
+### Causal Consistency
+
+
+
+### Eventual Consistency
 
 
 
