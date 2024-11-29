@@ -6,9 +6,9 @@ created: November 21, 2024
 last_updated: November 21, 2024
 ---
 
-What's on your mind when it comes to data structures provided by C++? Which are high frequently used in algorithm functions?
+What's on your mind when it comes to data structures provided by C++? Which are high frequently used in algorithm functions?<!--more-->
 
-In this blog, I'd like to summarize those data structures(stack, queue, hash map and priority queue) one-by-one, and how to use them in different scenarios will be talked about in the subsequent blogs.<!--more-->
+In this blog, I'd like to summarize those data structures(stack, queue, hash map and priority queue) one-by-one, and how to use them in different scenarios will be talked about in the subsequent blogs.
 
 ![2024-11-21-data-structures](../../../assets/images/2024-11-21-data-structures.svg)
 
