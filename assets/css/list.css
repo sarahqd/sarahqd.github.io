@@ -45,6 +45,25 @@ td {
     border-right:1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
 }
+table.arvtable {
+    width: 100%;
+    border-collapse: collapse;
+    border-left: transparent;
+    border-top: transparent;
+}
+th.arvth, td.arvtd {
+    padding: 10px;
+    text-align: left;
+    font: normal;
+    font-weight: 50;
+    border-right:transparent;
+    border-bottom: transparent;
+    background-color: transparent;
+}
+.arvth a {
+    color: black;
+}
+
 tr:nth-child(odd) {
     background-color: white; /* Light gray for odd rows */
 }
@@ -79,8 +98,4 @@ tr:nth-child(even) {
 }
 .tag-list:hover {
     font-weight: bold;
-}
-
-.table-content a {
-    color: black;
 }

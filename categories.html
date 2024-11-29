@@ -17,11 +17,11 @@ layout: default
     <div id="section-{{ tag[0] }}" class="group-title">
       <img src="/assets/images/tag-icon-2024-02-18-1534.svg" class="icon-setting"> {{ tag[0] }}
     </div>
-    <table>
+    <table class="arvtable">
         {% for post in tag[1] %}
-        <tr>
-          <th width=35% class="text-last-updated"><img src="/assets/images/date-icon-2024-01-31-1311.svg" class="icon-setting">{{ post.created }}</th>
-          <th class="table-content"><a href="{{ post.url }}">{{ post.title }}</th>
+        <tr class="arvtr">
+          <th class="arvth" width=35% class="text-last-updated"><img src="/assets/images/date-icon-2024-01-31-1311.svg" class="icon-setting">{{ post.created }}</th>
+          <th class="arvth" class="table-content"><a href="{{ post.url }}">{{ post.title }}</th>
         </tr>
         {% endfor %}
     </table>
