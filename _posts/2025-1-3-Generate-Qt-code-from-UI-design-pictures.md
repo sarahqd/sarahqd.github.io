@@ -227,7 +227,7 @@ void PictureListDialog::onExportButtonClicked()
 }
 ```
 
-on the Qt platform produced the expected results. 
+Running the code on the Qt platform produced the expected results. 
 
 ![2025-01-08-generate-ui-pic](../../../assets/images/2025-01-08-generate-ui-pic.png)
 
