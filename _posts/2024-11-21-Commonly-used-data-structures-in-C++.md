@@ -16,7 +16,7 @@ This table lists the commonly used data structures natively supported by C++. To
 
 | Data structures | C++ Objects | Common methods                     |
 | --------------- | ------------- | ---------------------------------- |
-| string | std::string | string str<br/>substr(int startId, int length)<br/>push_back(char)<br/>char pop_back()<br/>char front()<br/>char back()<br/>int size()<br/>int compare(int id1, int id2, string)<br/>--------------------------------------<br/>sort: sort(str.begin(), str.end())<br/>reverse: reverse(str.begin(), str.end())<br/>--------------------------------------<br/>string to int: atoi<br/>int to string: std::to_string(int)<br/>if a char is a number(0~9):<br/> int isDigit(unsigned char c) |
+| string | std::string | string str<br/>substr(int startId, int length)<br/>push_back(char)<br/>char pop_back()<br/>char front()<br/>char back()<br/>int size()<br/>int compare(int id1, int id2, string)<br/>--------------------------------------<br/>sort: sort(str.begin(), str.end())<br/>reverse: reverse(str.begin(), str.end())<br/>--------------------------------------<br/>string to int: atoi<br/>int to string: std::to_string(int)<br/>char tolower(char)<br/>char toupper(char)<br/>if a char is a number(0~9):<br/>int isDigit(unsigned char c) |
 | vector | std::vector\<T> | push_back(T)<br/>emplace_back(T)<br/>T front()<br/>T back()<br/>insert(int pos, T val)<br/>operator[]<br/>erase(iterator begin, iterator end)<br/>erase(iterator begin)<br/>bool empty()<br/>int size() |
 | stack           | std::stack\<T> | push(T)<br>pop()<br/>T top()<br/>bool empty()<br/>int size()  |
 | queue | std::queue\<T> | push(T)<br/>pop()<br/>T front()<br/>T back()<br/>bool empty()<br/>int size() |
