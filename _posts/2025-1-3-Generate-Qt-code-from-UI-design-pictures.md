@@ -16,7 +16,7 @@ Before writing a prompt, it’s important to understand the following parameters
 - **Top-p**: A sampling setting where the value ranges from 0 (only the highest-probability token) to 1 (all tokens).
 - **Top-k**: Another sampling setting. A top-k value of 1 means greedy decoding (only the highest-probability token), while higher values increase the randomness of the output.
 
-For my task, a general configuration suffices. However, I'd prefer setting a larger **max_output_tokens**  to handle generating more complex code.
+Usually, a general configuration suffices. However, a larger **max_output_tokens** is preferred to handle generating more complex code.
 
 In addition, there are various methods for writing prompts, such as **one-shot/few-shot**, **Chain-of-Thought (CoT)**, **Tree-of-Thought (ToT)**, and **ReAct (Reason & Act)**. These techniques focus on providing clear instructions and examples to the model, mimicking the way humans learn new concepts.
 
@@ -24,7 +24,7 @@ Now, write an instruction prompt for the LLM and observe how it performs after l
 
 ## Prompt from picture to Qt code
 
-I wrote the following prompt to help me generate Qt code directly from a picture, and it has significantly reduced the time and energy I need to focus on more critical aspects of my projects.
+The following prompt could help you generate Qt code directly from a picture, and it could significantly reduce your time and energy then you can focus on more critical aspects of your projects.
 
 ```Prompt
 Generate qt class code from the design picture. We should consider several parts below, then generate the code.
@@ -41,13 +41,13 @@ Generate qt class code from the design picture. We should consider several parts
 You don't have to analyze the coding process
 ```
 
-For this task, I chose the `gemini` model, specifically `gemini-2.0-flash-thinking-exp-1219`. It’s a free model capable of handling long and complex prompts effectively. Some other models might struggle to deal with this prompt.
+For this task, gemini model is preferred, specifically `gemini-2.0-flash-thinking-exp-1219`. It’s a free model capable of handling long and complex prompts effectively. Some other models might struggle to deal with this prompt.
 
-When I provided the model with a picture 
+Provide the model with the picture 
 
 ![2025-01-08-design-ui-pic](../../../assets/images/2025-01-08-design-ui-pic.png)
 
- and configured it with `temperature=1`,`top-p=0.95`,`max_output_tokens=8192`,  it generated `PictureListDialog.h` and `PictureListDialog.cpp`.
+ and configure it with `temperature=1`,`top-p=0.95`,`max_output_tokens=8192`. The model generated `PictureListDialog.h` and `PictureListDialog.cpp`.
 
 ```c++
 // PictureListDialog.h
@@ -232,4 +232,3 @@ Running the code on the Qt platform produced the expected results.
 ![2025-01-08-generate-ui-pic](../../../assets/images/2025-01-08-generate-ui-pic.png)
 
 The entire code generation process took just **20.3 seconds**—remarkably fast! The output met most of my requirements, needing only minor modifications to fit perfectly.
-
