@@ -2,8 +2,8 @@
 layout: post
 title: "Generate Qt code from a UI picture"
 tags: ["AI"]
-created: January 3, 2024
-last_updated: January 8, 2024
+created: January 3, 2025
+last_updated: January 8, 2025
 ---
 
 After years of working on middleware, I’ve lost interest in writing UI code. However, in smaller businesses, I often find myself responsible for it anyway. So, why not use AI tools to generate the code directly from UI designs?<!---more--->

@@ -2,8 +2,8 @@
 layout: post
 title: "Strategies for effective talk"
 tags: ["Communication"]
-created: January 14, 2024
-last_updated: January 17, 2024
+created: January 14, 2025
+last_updated: January 17, 2025
 ---
 
 Are you afraid of public speaking? Would you like to talk to a stranger comfortably? Experts have summarized multiple methods of how to have effective talk with others.   <!---more--->
