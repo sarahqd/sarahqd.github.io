@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "When A C++ engineer begins to write javascript"
-tags: javascript
+tags: Programming
 created: January 23, 2024
 last_updated: February 21, 2024
 ---
