@@ -8,7 +8,7 @@ last_updated: February 17, 2025
 
 Modern C++ has been evolving, continuously incorporating advanced features from other languages like Python and Java. From many perspectives, C++17 and C++20 are significantly different from earlier versions of C++.<!---more--->
 
-C++17 introduces more modern containers, such as `std::tuple`, `std::set`, `std::variant`, and `std::array`, making them more powerful and convenient to use. However, the details of using these containers are beyond the scope of this blog.
+Modern C++ introduces more modern containers, such as `std::any`(C++17), `std::variant`(C++17), `std::optional`(C++17) and `std::span`(C++20), making C++ more powerful and convenient to use. However, the details of using these containers are beyond the scope of this blog.
 
 This blog will focus on the new features in **template metaprogramming**, Python-style  **generators**, the **ranges library**, and **modules**.
 
