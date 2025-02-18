@@ -178,19 +178,21 @@ int main(){
 
 The ranges library provides a collection of modern functions for constructing and manipulating lists. Below is a comparison of similar methods in Python and C++20.
 
-| python              | c++20                 |
-| ------------------- | --------------------- |
-| range               | std::views::iota      |
-| map                 | std::views::transform |
-| filter              | std::views::filter    |
-| .sort (in-place)    | std::ranges::sort     |
-| .reverse (in-place) | std::ranges::reverse  |
+| python                        | c++20                                   |
+| ----------------------------- | --------------------------------------- |
+| range                         | std::views::iota                        |
+| [:5]/[5:]                     | std::views::take(5)/std::views::drop(5) |
+| map                           | std::views::transform                   |
+| filter                        | std::views::filter                      |
+| .sort (in-place algorithm)    | std::ranges::sort                       |
+| .reverse (in-place algorithm) | std::ranges::reverse                    |
 
-Now try to build a series of integers, map with square function and filter out the even number. We'll write the code in Python and C++20 separately.
+`Views` build views of `vectors` or `arrays`,  operate on those data structures but not change them.  You'd better convert a `range` to a specific `vector` or `array` with `std::ranges::to<T>()` if you'd like to do `sort` or `reverse` operation. 
+
+Now let's try to build a series of integers, map with square function and filter out the even number. We'll write the code in Python and C++20 separately.
 
 ```python
-mappedNum = list(map(lambda x:x*x, range(1,10)))
-filteredNum = list(filter(lambda x:x%2 == 0, mappedNum))
+filteredNum = list(filter(lambda x:x%2 == 0, list(map(lambda x:x*x, range(1,10)))))
 print(filteredNum) # output [4, 16, 36, 64]
 ```
 
