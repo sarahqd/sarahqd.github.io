@@ -20,7 +20,9 @@ Some persons work well with one or a couple of audiences, but feel nervous in th
 
 ## Ask open-ended questions
 
-You shall ask questions if you'd like to know more about others. Closed-ended questions come with a shallow answer.
+The worst thing in a conversation is no questions. You show little interest in others and they can sense that. Personally, I'd prefer to be alone rather than engage with people who only talk about themselves.
+
+You shall ask questions if you'd like to build a conversation and know more about others. Closed-ended questions come with a shallow answer.
 
 "When will the meeting begin?" "9:00 a.m."
 

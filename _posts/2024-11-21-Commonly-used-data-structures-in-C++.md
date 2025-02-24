@@ -24,7 +24,7 @@ This table lists the commonly used data structures natively supported by C++. To
 | set | std::set\<T>   O(logN) | insert(T)<br/>int count()<br/>bool empty()<br/>int size()<br/>clear()<br/>erase(T)<br/>Iterator find(T)<br/>Iterator std::next(Iterator)<br/>Iterator std::prev(Iterator) |
 | hash map   | std::unordered_map<T1, T2> | insert({T1 ,T2 })<br/>int count()<br/>operator[]<br/>bool empty()<br/>int size()<br/>clear()<br/>erase(T1) |
 |  | std::unordered_set\<T> | insert(T)<br/>int count()<br/>operator[]<br/>bool empty()<br/>int size()<br/>clear()<br/>erase(T) |
-| priority queue | std::priority_queue\<T> | push(T)<br/>pop()<br/>T top()<br/>bool empty()<br/>int size()<br/>-----------------------------------------<br/>Constructor of a max priority queue<br/>auto cmp = \[](int x, int y){ return x < y; }<br/>priority_queue<int, vector\<int>, decltype(cmp)> pq(cmp) |
+| priority queue | std::priority_queue\<T> | push(T)<br/>pop()<br/>T top()<br/>bool empty()<br/>int size()<br/>-----------------------------------------<br/>Constructor of a max priority queue<br/>auto cmp = \[](int x, int y){ return x < y; }<br/>priority_queue<int, vector\<int>, decltype(cmp)> pq(cmp)<br/>or<br/>struct cmp{<br/>    bool operator()(const int x, const int y) const{<br/>              return x < y; <br/>     }<br/>}<br/>priority_queue<int, vector\<int>, cmp> pq<br/> |
 
 
 
