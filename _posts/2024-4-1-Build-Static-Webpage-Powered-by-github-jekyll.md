@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Build a personal website powered by GitHub and Jekyll"
-tag: html
+tag: ["Html"]
 created: April 1, 2024
 last_updated: April 1, 2024
 image: ../../../assets/images/2024-4-1-github-jekyll.jpeg

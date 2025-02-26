@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "When A C++ engineer begins to write javascript"
-tags: Programming
+title:  "When A C++ engineer begins to write JavaScript"
+tags: ["Programming"]
 created: January 23, 2024
 last_updated: February 21, 2024
 ---
-One day, there was a task in need of a small javascript function in my work, and I decided to do it myself. I thought if I could write in one kind of coding language then I could manage to use another one.It sounds like if a person could speak Chinese, then he must speak English easily. It's funny. But the javascript code I wrote works ok, even though it looks more c++ style.<!--more-->
+One day, there was a task in need of a small JavaScript function in my work, and I decided to do it myself. I thought if I could write in one kind of coding language then I could manage to use another one. It sounds like if a person could speak Chinese, then he must speak English easily. It's funny. But the JavaScript code I wrote works ok, even though it looks more c++ style.<!--more-->
 
-Quite C++ style javascript code.
+Quite C++ style JavaScript code.
 
 ```javascript
 function getString(){
@@ -28,7 +28,7 @@ async function handleString(str_string){
 }
 ```
 
-Then I tried to change it to be more native javascript style.
+Then I tried to change it to be more native JavaScript style.
 
 ```javascript
 async function getString(cb){

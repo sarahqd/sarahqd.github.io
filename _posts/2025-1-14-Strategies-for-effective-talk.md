@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Strategies for effective talk"
-tags: ["Communication"]
+tags: ["Communication","BookNotes"]
 created: January 14, 2025
 last_updated: January 17, 2025
 ---

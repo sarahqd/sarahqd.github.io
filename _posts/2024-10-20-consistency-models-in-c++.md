@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Consistency models"
-tags: ["System"]
+tags: ["System design"]
 created: October 20, 2024
 last_updated: October 20, 2024
 ---

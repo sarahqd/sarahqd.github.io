@@ -2,8 +2,9 @@
 permalink: /categories/
 layout: default
 ---
+{% assign sorted_tags = site.tags | sort %}
 
-{% for tag in site.tags %}
+{% for tag in sorted_tags %}
     {% assign tag-post-num = tag[1] | size %}
     <span>
       <a href="#section-{{ tag[0] }}" class="tag-list">
@@ -13,7 +14,7 @@ layout: default
 {% endfor %}
 
 <div class="horizontal-line"></div>
-{% for tag in site.tags %}
+{% for tag in sorted_tags %}
     <div id="section-{{ tag[0] }}" class="group-title">
       <img src="/assets/images/tag-icon-2024-02-18-1534.svg" class="icon-setting"> {{ tag[0] }}
     </div>
